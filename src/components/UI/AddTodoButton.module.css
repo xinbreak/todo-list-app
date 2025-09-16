@@ -1,0 +1,21 @@
+.todoButton {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: rgb(94, 182, 154);
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.todoButton:hover {
+  background-color: rgb(80, 151, 129);
+}
+
+.todoIcon {
+  font-size: 20px;
+  margin-right: 10px;
+}
