@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 import AddTodoButton from '../UI/AddTodoButton'
 import styles from './Header.module.css'
 
-export default function Header() {
+export default function Header({ setModalActive }) {
   return (
     <header className={styles.todoHeader}>
       <div className={styles.todoLogo}>
@@ -11,7 +11,7 @@ export default function Header() {
         <h1 className={styles.todoHeaderText}>ToDo</h1>
       </div>
       <NavBar />
-      <AddTodoButton />
+      <AddTodoButton setModalActive={() => setModalActive(true)} />
     </header>
   )
 }

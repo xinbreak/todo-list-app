@@ -1,10 +1,13 @@
 import { RiAddCircleLine } from 'react-icons/ri'
 import styles from './AddTodoButton.module.css'
 
-export default function AddTodoButton() {
+export default function AddTodoButton({ setModalActive }) {
   return (
     <div>
-      <button className={styles.todoButton}>
+      <button
+        className={styles.todoButton}
+        onClick={() => setModalActive(true)}
+      >
         {<RiAddCircleLine className={styles.todoIcon} />}Новая задача
       </button>
     </div>

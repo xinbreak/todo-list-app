@@ -1,9 +1,10 @@
 @font-face {
   font-family: 'Nunito'; /* Название шрифта, которое вы будете использовать в CSS */
-  src: url('/src/fonts/NunitoSans-Italic-VariableFont_YTLC\,opsz\,wdth\,wght.ttf')
+  src: url('/src/fonts/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf')
     format('woff');
   font-weight: normal;
   font-style: normal;
+  letter-spacing: 2%;
 }
 
 body {
