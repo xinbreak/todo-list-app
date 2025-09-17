@@ -36,7 +36,11 @@ export default function AddTodoModal({ isOpen, onClose, onAddTodo }) {
           <button className={styles.modalCloseButton} onClick={onClose}>
             Отменить
           </button>
-          <button className={styles.modalAddButton} onClick={onSubmitHandler}>
+          <button
+            className={styles.modalAddButton}
+            type="button"
+            onClick={onSubmitHandler}
+          >
             Добавить
           </button>
         </div>
