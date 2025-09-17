@@ -9,10 +9,14 @@ export default function App() {
   const [modalActive, setModalActive] = useState(false)
   const [todos, setTodos] = useState([])
   const [todosDone, setTodosDone] = useState([])
+  const [countMade, setCountMade] = useState(0)
+  const [countDone, setCountDone] = useState(0)
+  const [countDelete, setCountDelete] = useState(0)
 
   const addTodo = (newTodoText) => {
     const newTodo = { id: Date.now(), text: newTodoText }
     setTodos([...todos, newTodo])
+    setCountMade(countMade + 1)
   }
 
   const completeTodo = (id) => {
@@ -20,17 +24,23 @@ export default function App() {
     if (!completed) return
     setTodos(todos.filter((t) => t.id !== id))
     setTodosDone([...todosDone, completed])
+    setCountDone(countDone + 1)
   }
 
   const deleteTodo = (id) => {
     setTodos(todos.filter((t) => t.id !== id))
     setTodosDone(todosDone.filter((t) => t.id !== id))
+    setCountDelete(countDelete + 1)
   }
 
   return (
     <>
       <Header setModalActive={() => setModalActive(true)} />
-      <WeeklyProgress />
+      <WeeklyProgress
+        countMade={countMade}
+        countDone={countDone}
+        countDelete={countDelete}
+      />
       <TodoList
         todos={todos}
         todosDone={todosDone}

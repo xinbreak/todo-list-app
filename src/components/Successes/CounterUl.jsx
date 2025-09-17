@@ -1,14 +1,14 @@
 import Counter from './Counter'
 import styles from './CounterUl.module.css'
 
-const items = ['Создано', 'Завершено', 'Удалено']
+const items = [, ,]
 
-export default function CounterUl() {
+export default function CounterUl({ countMade, countDone, countDelete }) {
   return (
     <ul className={styles.counterUl}>
-      {items.map((item) => (
-        <Counter text={item} />
-      ))}
+      <Counter text="Создано" count={countMade} />
+      <Counter text="Завершено" count={countDone} />
+      <Counter text="Удалено" count={countDelete} />
     </ul>
   )
 }

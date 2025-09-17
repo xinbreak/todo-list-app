@@ -18,7 +18,8 @@ export default function AddTodoModal({ isOpen, onClose, onAddTodo }) {
       isOpen={isOpen}
       overlayClassName={styles.modal}
       className={styles.modalWrapper}
-      onRequestClose={onClose} // чтобы можно было закрыть по клику вне модалки или Esc
+      onRequestClose={onClose}
+      ariaHideApp={false}
     >
       <div className={styles.modalContent}>
         <h1 className={styles.modalName}>Добавить новую задачу</h1>

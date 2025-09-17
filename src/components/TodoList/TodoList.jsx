@@ -25,7 +25,7 @@ export default function TodoList({
       {todosDone.map((todo) => (
         <TodoDone
           key={todo.id}
-          todo={todo.text}
+          text={todo.text}
           onDelete={() => onDeleteTodo(todo.id)}
         />
       ))}

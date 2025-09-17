@@ -1,12 +1,7 @@
 import { useState } from 'react'
 import styles from './Counter.module.css'
 
-export default function Counter({ text }) {
-  const [count, setCount] = useState(0)
-  const changeCount = () => {
-    setCount(count + 1)
-  }
-
+export default function Counter({ text, count }) {
   return (
     <li className={styles.counterBlock}>
       <h3 className={styles.counterName}>{text}</h3>
