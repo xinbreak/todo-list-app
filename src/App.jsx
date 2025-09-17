@@ -15,6 +15,14 @@ function App() {
     setTodosDone(todosDone.filter((_, idx) => idx !== index))
   }
 
+  const addTodo = (newTodo) => {
+    setTodos([...todos, newTodo])
+  }
+
+  const addTodoDone = (newTodoDone) => {
+    setTodosDone([...todosDone, newTodoDone])
+  }
+
   return (
     <>
       <Header setModalActive={() => setModalActive(true)} />
@@ -23,10 +31,12 @@ function App() {
         todos={todos}
         todosDone={todosDone}
         deleteTodo={deleteTodoHandler}
+        addTodoDone={addTodoDone}
       />
       <AddTodoModal
         isOpen={modalActive}
         onClose={() => setModalActive(false)}
+        onAddTodo={addTodo}
       />
     </>
   )
