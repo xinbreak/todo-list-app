@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import TodoList from './components/TodoList/TodoList'
 import AddTodoModal from './components/UI/AddTodoModal'
 import Header from './components/Header/Header'
@@ -12,6 +12,11 @@ export default function App() {
   const [countMade, setCountMade] = useState(0)
   const [countDone, setCountDone] = useState(0)
   const [countDelete, setCountDelete] = useState(0)
+  const [theme, setTheme] = useState('light')
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+  }, [theme])
 
   const addTodo = (newTodoText) => {
     const newTodo = { id: Date.now(), text: newTodoText }
@@ -35,7 +40,11 @@ export default function App() {
 
   return (
     <>
-      <Header setModalActive={() => setModalActive(true)} />
+      <Header
+        setModalActive={() => setModalActive(true)}
+        toggleTheme={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+        currentTheme={theme}
+      />
       <WeeklyProgress
         countMade={countMade}
         countDone={countDone}

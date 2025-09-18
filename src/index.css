@@ -7,10 +7,26 @@
   letter-spacing: 2%;
 }
 
+:root {
+  /* Светлая тема */
+  --bg-color: #fafafa;
+  --text-color: #282846;
+  --component-color: #ffffff;
+  --box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+:root.dark {
+  /* Тёмная тема */
+  --bg-color: #222831;
+  --text-color: #eeeeee;
+  --component-color: #2c3440;
+  --box-shadow: none;
+}
+
 body {
   margin: 0;
-  background-color: #222831;
-  color: #ffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: 'Nunito';
   letter-spacing: 1px;
 }

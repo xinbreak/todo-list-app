@@ -2,7 +2,8 @@
   margin: 30px;
   padding: 20px;
   width: 40%;
-  background-color: #2c3440;
+  background-color: var(--component-color);
+  box-shadow: var(--box-shadow);
   border-radius: 10px;
 }
 
