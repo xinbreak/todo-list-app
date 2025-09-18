@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
+import Calendar from 'react-calendar'
 import TodoList from './components/TodoList/TodoList'
 import AddTodoModal from './components/UI/AddTodoModal'
 import Header from './components/Header/Header'
 import WeeklyProgress from './components/Successes/WeeklyProgress'
+import './components/UI/Calendar.css'
 import './App.css'
 
 export default function App() {
@@ -45,17 +47,23 @@ export default function App() {
         toggleTheme={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         currentTheme={theme}
       />
-      <WeeklyProgress
-        countMade={countMade}
-        countDone={countDone}
-        countDelete={countDelete}
-      />
-      <TodoList
-        todos={todos}
-        todosDone={todosDone}
-        onCompleteTodo={completeTodo}
-        onDeleteTodo={deleteTodo}
-      />
+      <div className="container">
+        <div className="containerListAndProgress">
+          <WeeklyProgress
+            countMade={countMade}
+            countDone={countDone}
+            countDelete={countDelete}
+          />
+
+          <TodoList
+            todos={todos}
+            todosDone={todosDone}
+            onCompleteTodo={completeTodo}
+            onDeleteTodo={deleteTodo}
+          />
+        </div>
+        <Calendar />
+      </div>
       <AddTodoModal
         isOpen={modalActive}
         onClose={() => setModalActive(false)}

@@ -1,7 +1,6 @@
 .weeklyProgressBlock {
-  margin: 30px;
   padding: 20px;
-  width: 40%;
+  width: 90%;
   background-color: var(--component-color);
   box-shadow: var(--box-shadow);
   border-radius: 10px;

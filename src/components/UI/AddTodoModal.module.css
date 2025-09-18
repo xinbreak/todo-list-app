@@ -64,7 +64,7 @@
 .modalAddButton {
   font-size: 16px;
   padding: 10px 25px;
-  color: var(--text-color);
+  color: #fff;
   border: 0;
   border-radius: 10px;
   cursor: pointer;
